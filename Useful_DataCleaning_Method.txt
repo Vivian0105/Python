@@ -1,0 +1,26 @@
+df.dtypes
+df.index
+df.columns
+df.describe()
+df.info()
+df.sort_values(by='column name',ascending=True)
+df2[df2['E'].isin(['two', 'four'])]
+pd.isna(df)
+pd.notna(df)
+df.append(s, ignore_index=True)   # append rows to a dataframe
+df.groupby('A').sum()
+df.groupby(['A', 'B']).sum()
+df.drop("A",axis=1)    # drop column 
+df["A"].value_counts()
+df.drop(['A','B'],axis=1)
+
+# To deal with NaN
+df.dropna(how="any")    # to drop any rwos that have missing data
+df.ffill(inplace=True)     # forward fill
+df.bfill(inplace=True)     #backward fill
+df.fillna(df.mean(),inplace=True)    #fill with mean value
+df.fillna(method='pad', limit=1)   #fill forward, limit one 
+
+# merge dataframes
+last_month_price = pd.merge(last_month, new_sales,
+                        how="left", on=["date_block_num", "shop_id","item_id"])
